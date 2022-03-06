@@ -1,0 +1,44 @@
+{
+  "name": "chainable-array",
+  "version": "1.0.0",
+  "description": "Every project should kickstart with some basic utils :)",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "test-w": "jest --config jestconfig.json --watchAll",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chikalaka/kickstart-utils.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "js",
+    "kickstart",
+    "utils",
+    "helpers",
+    "vanilla"
+  ],
+  "author": "Edan Chetrit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chikalaka/kickstart-utils/issues"
+  },
+  "homepage": "https://github.com/chikalaka/kickstart-utils#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
+  }
+}
