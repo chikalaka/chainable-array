@@ -1,7 +1,7 @@
 {
   "name": "chainable-array",
   "version": "1.0.0",
-  "description": "Every project should kickstart with some basic utils :)",
+  "description": "More chainable methods to the Array",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -16,24 +16,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chikalaka/kickstart-utils.git"
+    "url": "git+https://github.com/chikalaka/chainable-array.git"
   },
   "files": [
     "lib/**/*"
   ],
   "keywords": [
     "js",
-    "kickstart",
+    "ts",
+    "typescript",
+    "javascript",
     "utils",
     "helpers",
-    "vanilla"
+    "vanilla",
+    "extend",
+    "chainable",
+    "array"
   ],
   "author": "Edan Chetrit",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chikalaka/kickstart-utils/issues"
+    "url": "https://github.com/chikalaka/chainable-array/issues"
   },
-  "homepage": "https://github.com/chikalaka/kickstart-utils#readme",
+  "homepage": "https://github.com/chikalaka/chainable-array#readme",
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "jest": "^27.5.1",
