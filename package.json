@@ -1,6 +1,6 @@
 {
   "name": "chainable-array",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "More chainable methods to the Array",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
