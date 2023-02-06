@@ -6,18 +6,12 @@ type KeyOrFunc = ((o: Dictionary) => any) | string
 type SortByNumber = -1 | 1 | 0
 type Nullish = null | undefined
 
-const isNullish = (v: any): v is Nullish => v === undefined || v === null
+const isNullish = (v: unknown): v is Nullish => v === undefined || v === null
+const isFunction = (v: unknown): v is Function => typeof v === "function"
 
 type Dictionary<Value = any> = {
   [key: PropertyKey]: Value
 }
-
-const isTypeof =
-  <T>(type: string) =>
-  (v: any): v is T =>
-    typeof v === type
-
-const isFunction = isTypeof<Function>("function")
 
 type Remove<T> = (
   value:
@@ -69,7 +63,9 @@ class ChainableArray<T> extends Array<T> {
     // @ts-ignore
     _A(super.filter((v, i, a) => (isFunction(val) ? !val(v, i, a) : v !== val)))
   orderBy = (...keys: (KeyOrFunc | KeyAndOrder)[]) =>
+    // @ts-ignore
     _A(super.sort(orderBy(keys.reverse())))
+  // @ts-ignore
   sortBy = (key: KeyOrFunc, order?: Order) => _A(super.sort(sortBy(key, order)))
   toArray = () => Array.from(this)
 }

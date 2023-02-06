@@ -204,27 +204,23 @@ test("orderBy", () => {
   )
   passIfSame(result, expected)
 
-    const users2 = [
-        { user: { name: "Alice" }, age: 20, val: 1 },
-        { user: { name: "Bob" }, age: 40, val: 4 },
-        { user: { name: "Alice" }, age: 30, val: 2 },
-        { user: { name: "Bob" }, age: 40, val: 3 },
-    ]
+  const users2 = [
+    { user: { name: "Alice" }, age: 20, val: 1 },
+    { user: { name: "Bob" }, age: 40, val: 4 },
+    { user: { name: "Alice" }, age: 30, val: 2 },
+    { user: { name: "Bob" }, age: 40, val: 3 }
+  ]
 
-    const ordered = _A(users2).orderBy(
-        o => o.user.name,
-        ["age", "desc"],
-        "val"
-    )
+  const ordered = _A(users2).orderBy(o => o.user.name, ["age", "desc"], "val")
 
-    const orderedExpected = [
-        { user: { name: "Alice" }, age: 30, val: 2 },
-        { user: { name: "Alice" }, age: 20, val: 1 },
-        { user: { name: "Bob" }, age: 40, val: 3 },
-        { user: { name: "Bob" }, age: 40, val: 4 }
-    ]
+  const orderedExpected = [
+    { user: { name: "Alice" }, age: 30, val: 2 },
+    { user: { name: "Alice" }, age: 20, val: 1 },
+    { user: { name: "Bob" }, age: 40, val: 3 },
+    { user: { name: "Bob" }, age: 40, val: 4 }
+  ]
 
-    passIfSame(ordered, orderedExpected)
+  passIfSame(ordered, orderedExpected)
 })
 
 test("sortBy", () => {
@@ -317,10 +313,9 @@ test("sortBy", () => {
 })
 
 test("toArray", () => {
-    const chainableArray = new ChainableArray([1, 2, 3])
-    const array = chainableArray.toArray()
+  const chainableArray = new ChainableArray([1, 2, 3])
+  const array = chainableArray.toArray()
 
-    expect(array instanceof Array).toBe(true)
-    expect(array instanceof ChainableArray).toBe(false)
+  expect(array instanceof Array).toBe(true)
+  expect(array instanceof ChainableArray).toBe(false)
 })
-
