@@ -30,6 +30,17 @@ test("Many chainable methods", () => {
   passIfSame(result, expected)
 })
 
+test("reverse", () => {
+  let result = _A([1, 2, 3])
+  passIfSame(result.reverse(), [3, 2, 1])
+  passIfSame(result.reverse(), [1, 2, 3])
+})
+
+test("sort", () => {
+  let result = _A([1, 3, 2])
+  passIfSame(result.sort(), [1, 2, 3])
+})
+
 test("Pass one or zero values to _A", () => {
   passIfSame(_A([4]), [4])
   passIfSame(_A([]), [])
